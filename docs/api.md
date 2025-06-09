@@ -47,7 +47,8 @@ recording.analyze()
 print(recording.detections)
 ```
 
-It is also possible annotate the detection if the species is on the predicted list for that location and date. Using `is_predicted_for_location_and_date` will annotate rather than filter.
+It is also possible to annotate each detection — rather than filter — based on whether the species is predicted to occur at the specified location and date. Setting `return_all_detections` enables this behavior.
+
 
 ```python
 from birdnetlib import Recording
@@ -69,7 +70,7 @@ print(recording.detections)
 
 ```
 
-When using `return_all_detections=True`, `recording.detections` contains a list of detected species, along with time ranges and confidence value and an `is_predicted_for_location_and_date` boolean. For example, a Spotted Crake would not be predicted for the eastern United States in June.
+When using `return_all_detections=True`, `recording.detections` contains a list of detected species, along with time ranges and confidence value, and an `is_predicted_for_location_and_date` boolean. For example, a Spotted Crake would not be predicted for the eastern United States in June.
 
 ```python
 [{'common_name': 'Spotted Crake',
